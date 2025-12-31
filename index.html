@@ -65,6 +65,17 @@ h1 {
     animation-delay: 7s;
 }
 
+.music-btn {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: #9fffd6;
+    color: #0f3d2e;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .heart {
     position: absolute;
     bottom: -20px;
@@ -92,21 +103,33 @@ h1 {
     <h1>Para a Mulher Mais Especial da Minha Vida</h1>
 
     <div class="message">
-        Você constrói nosso lar com sabedoria, amor e dedicação.  
-        Seu cuidado transforma cada dia em algo especial.  
-        Seu valor é maior que qualquer tesouro.
+        Você é a mulher que constrói nosso lar com amor,  
+        que transforma dias comuns em bênçãos.  
+        Sua sabedoria floresce em nossa casa  
+        e seu cuidado é o alicerce da nossa família.
     </div>
 
     <div class="slideshow">
         <img src="IMG-20240106-WA0015.jpg">
     </div>
 
+    <button class="music-btn" onclick="playMusic()">▶ Ativar Música</button>
+
     <div class="love">
         Eu te amo infinitamente ❤️
     </div>
 </div>
 
+<audio id="bgm" loop>
+    <source src="casa.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+function playMusic(){
+    const audio = document.getElementById("bgm");
+    audio.play();
+}
+
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
